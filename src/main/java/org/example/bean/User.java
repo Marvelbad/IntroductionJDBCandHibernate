@@ -1,14 +1,31 @@
 package org.example.bean;
 
 
-import lombok.AllArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
-@ToString
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "user")
+@NoArgsConstructor
 @AllArgsConstructor
+@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class User {
-    private long id;
-    private String name;
-    private String lastName;
-    private byte age;
+
+    @Id
+    @Column()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+
+    @Column()
+    String name;
+
+    @Column()
+    String lastName;
+
+    @Column()
+    byte age;
 }

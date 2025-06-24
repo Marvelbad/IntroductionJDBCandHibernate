@@ -8,9 +8,11 @@ import org.example.util.Util;
 public class Main {
     public static void main(String[] args) {
 //        Util.getJDBCConnection();
+//        Util.getHibernateConnection();
+//        Util.getSessionFactoryProperties();
 
-
-        script(new UserServiceJDBCImpl());
+        Util.getSessionFactory();
+//        script(new UserServiceJDBCImpl());
 
     }
 
